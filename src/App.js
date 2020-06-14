@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/navbar/Navbar.js';
+import Jumbotron from './components/jumbotron/Jumbotron.js';
+import Books from './components/books/Books.js';
+import Wrapper from './components/wrapper/Wrapper';
+import Footer from './components/footer/Footer.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+console.log(process.env.REACT_APP_GOOGLEBOOKS_API_KEY);
+
+
+class App extends Component {
+
+  render() {
+
+    return (
+
+      <div className="App">
+          
+          <Navbar />
+
+          <Jumbotron />
+
+          <Books />
+
+          <Wrapper />
+
+          <Footer />
+
+      </div>
+    )
+}
 }
 
 export default App;

@@ -1,0 +1,12 @@
+/* ============================
+COLORS
+blue: #5CACC4
+green: #CEE879
+gold: #FCB653
+pink: #FF5254
+============================ */
+
+.wrapper {
+    flex: 1;
+    background-color: #5CACC4
+}
