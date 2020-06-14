@@ -6,7 +6,7 @@ gold: #FCB653
 pink: #FF5254
 ============================ */
 
-.wrapper {
+.card-wrapper {
     flex: 1;
     background-color: #5CACC4
 }

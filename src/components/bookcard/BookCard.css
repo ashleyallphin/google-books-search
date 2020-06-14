@@ -1,0 +1,117 @@
+/* ============================
+COLORS
+blue: #5CACC4
+green: #CEE879
+gold: #FCB653
+pink: #FF5254
+============================ */
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #242424;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #FF5254;
+    margin: 0 0 .5rem 0;
+}
+
+.card {
+    margin: 1.5rem auto;
+    border: 2px solid #CEE879;
+    border-radius: 0;
+}
+
+.card img {
+    border-right: 2px solid #CEE879;
+    border-radius: 0;
+}
+
+.card-flex {
+    display: flex;
+}
+
+.card-body {
+    text-align: left;
+    flex: 3;
+}
+
+.card-body h1:hover {
+    background-color: #CEE879;
+    color: #fff;
+}
+
+.card-body a:hover {
+    text-decoration: none;
+}
+
+.card-image {
+    flex: 1;
+}
+
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+}
+
+.btn {
+    background-color: #FF5254;
+    border: none;
+    height: calc(1.5em + .75rem + 2px);
+    font-size: .75rem
+}
+
+.save-book-button {
+    margin-top: 1rem;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.1rem rgba(255, 82, 84, .5);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle,
+.btn:hover,
+.btn-primary:focus {
+    background-color:hsl(359, 100%, 62%);
+    border-color: #FF5254;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus {
+box-shadow: 0 0 0 0.1rem rgba(255, 82, 84, .5)
+}
+
+@media screen and (max-width: 481px) {
+
+    .card img {
+        border-bottom: 2px solid #CEE879;
+        border-radius: .25rem 0 0 .25rem;
+    }
+
+
+    .card-flex {
+        display: block;
+    }
+
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./Books.css";
 import SearchArea from '../searcharea/SearchArea.js';
 import request from 'superagent';
-
+import Wrapper from '../wrapper/Wrapper.js';
 
 class Books extends Component {
 
@@ -24,15 +24,14 @@ class Books extends Component {
         .query({ q: this.state.searchField })
         .then((data) => {
             console.log(data);
+            //spread operator ...
+            this.setState({ books: [...data.body.items]})
         })
     }
     
 
     // search method (param 'e' = event)
     handleSearch = (e) => {
-
-        console.log(e.target.value);
-
         // set state when user uses input field
         // value = input field text
         this.setState({ searchField: e.target.value })
@@ -41,7 +40,10 @@ class Books extends Component {
     render() {
 
         return(
+            <div className="books">
             <SearchArea searchBooks={this.searchBooks} handleSearch={this.handleSearch} />
+            <Wrapper books={this.state.books} />
+            </div>
         );
         
     }
