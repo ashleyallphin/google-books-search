@@ -12,21 +12,21 @@ const Wrapper = (props) => {
       {/* render out all the individual book card components */}
       {
         props.books.map((books, i) => {
-          return <BookCard
-                    title={books.volumeInfo.title}
-                    author={books.volumeInfo.authors}
-                    category={books.volumeInfo.categories}
-                    image={books.volumeInfo.imageLinks.thumbnail}
-                    link={books.volumeInfo.canonicalVolumeLink}
-                    snippet={books.volumeInfo.description}
-                  />
+          return <div>
+                    <BookCard
+                      key={books.id}
+                      title={books.volumeInfo.title}
+                      author={books.volumeInfo.authors.join(", ") ? books.volumeInfo.authors.join(", ") : ["No author available"]}
+                      category={books.volumeInfo.categories ? books.volumeInfo.categories : ["No category available"]}
+                      image={books.volumeInfo.imageLinks.thumbnail}
+                      link={books.volumeInfo.canonicalVolumeLink}
+                      description={books.volumeInfo.description ? books.volumeInfo.description : ["No description available"]}
+                    /> 
+                </div>
         })
       }
-
     </div>
-
   )
-
 }
 
 export default Wrapper;

@@ -17,14 +17,17 @@ const BookCard = (props) => {
         src={props.image}
         alt="" />
         <Card.Body className="card-body">
-                <h3>{props.category}</h3>
-                <a href={props.link}>
+                <h4>{props.category}</h4>
+                <a rel="noopener noreferrer"
+                href={props.link} target="_blank">
                   <h1 className="book-title">{props.title}</h1>
                 </a>
+                <h2>by {props.author}</h2>
                 <div className="description">
-                  <h2>{props.snippet}</h2>
+                  <h3>{props.description}</h3>
                 </div>
-              <Button className="save-book-button" variant="primary">Save Book</Button>
+              <Button
+              className="save-book-button" variant="primary">Save Book</Button>
         </Card.Body>
         
         </div>

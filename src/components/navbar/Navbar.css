@@ -17,7 +17,7 @@ pink: #FF5254
     flex-shrink: 0;
 }
 
-.Navbar img {
+.navbar img {
     /* animation: App-logo-spin infinite 10s linear; */
     margin: .25rem;
     height: 1.5rem;

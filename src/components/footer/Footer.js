@@ -12,7 +12,7 @@ const Footer = props => {
     className="footer">
         <a
         className="footer-image"
-        href="https://github.com/ashleyallphin/clicky-game"
+        href="https://github.com/ashleyallphin/google-books-search"
         target="_blank"
         rel="noopener noreferrer"
         cursor="pointer"
