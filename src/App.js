@@ -1,32 +1,28 @@
-import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import Navbar from './components/navbar/Navbar.js';
-import Jumbotron from './components/jumbotron/Jumbotron.js';
-import Books from './components/books/Books.js';
-import Footer from './components/footer/Footer.js';
-
-// console.log(process.env.REACT_APP_GOOGLEBOOKS_API_KEY);
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Results from './components/Results';
 
 
-class App extends Component {
+function App() {
+	return (
+		<div className="App">
 
-  render() {
+			<Navbar />
+			<Header />
+			<Router>
+				<Switch>
+					{/* <Route exact path="/saved" component={Saved} /> */}
+					<Route component={Results} />
+				</Switch>
+			</Router>
+			<Footer />
 
-    return (
-
-      <div className="App">
-          {/* navbar component */}
-          <Navbar />
-          {/* jumbotron component (Google Books logo) */}
-          <Jumbotron />
-          {/* books component houses searchArea and wrapper*/}
-          <Books />
-
-          <Footer />
-
-      </div>
-    )
-}
+		</div>
+	);
 }
 
 export default App;
