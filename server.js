@@ -2,12 +2,13 @@
 const color = require('colors-cli/toxic');
 const morgan = require ("morgan");
 const express = require("express");
-const routes = require("./routes")
 const path = require('path');
 const dotenv = require ('dotenv');
 dotenv.config();
 
+
 // =========================
+// connect to the database via mongoose
 const mongoose = require("mongoose");
   //to circumvent deprecation warnings
     mongoose.set('useNewUrlParser', true);
@@ -23,24 +24,28 @@ console.log(`Error connectiong to MongoDB: ${err.message}`.x196));
 
 
 // =========================
+// invoke express
 const app = express();
-app.use(routes);
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// define routes
+const bookRoutes = require("./routes/books-routes");
 
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
-    
+
 
 // =========================
 app.use(morgan('dev'));
+app.use(bookRoutes);
 
 
 // =========================
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
-    console.log(`\n+++++++++++++++++++++++++++++++++++++++++`.x141 + `\nApp listening on `.x154 + `http://localhost:${PORT}`.x43.underline);
+    console.log(`\n+++++++++++++++++++++++++++++++++++++++++`.x141 +
+    `\nApp listening on `.x154 + `http://localhost:${PORT}`.x43.underline + `.`.x154);
 });
 

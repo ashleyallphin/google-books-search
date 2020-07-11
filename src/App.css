@@ -57,7 +57,6 @@ APP.JS
   }
 }
 
-
 /* ============================
 NAVBAR.JS
 ============================ */
@@ -97,21 +96,19 @@ a, a:hover {
 
 .link {
   line-height: 2.75rem;
-  padding: 0 5px;
+  padding: 0 15px;
   color: #fff;
   text-decoration: none;
 }
 
-.link {
-  color: #fff;
+.active-link {
   text-decoration: none;
+  color: #5CACC4;
+  background-color: #CEE879;
 }
 
 .link:hover {
   text-decoration: none;
-}
-
-.link:hover {
   color: #fff;
   background-color: #CEE879;
 }
@@ -325,6 +322,11 @@ WRAPPER
   background-color: #5CACC4
 }
 
+.saved-wrapper {
+  flex: 1;
+  background-color: #FCB653;
+}
+
 /* ============================
 BOOK CARD
 ============================ */
@@ -410,7 +412,7 @@ h4 {
   font-size: .75rem
 }
 
-.save-book-button {
+.book-button {
   margin-top: 1rem;
 }
 
@@ -437,12 +439,9 @@ box-shadow: 0 0 0 0.1rem rgba(255, 82, 84, .5)
       margin: 1.5rem auto 0 auto;
       border-radius: 0;
   }
-
-
   .card-flex {
       display: block;
   }
-
 }
 
 /* ============================

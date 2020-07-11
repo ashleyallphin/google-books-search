@@ -1,25 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import './App.css';
-import Navbar from './components/Navbar';
+import Nav from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Results from './components/Results';
+import Saved from './components/Saved';
 
 
 function App() {
 	return (
 		<div className="App">
 
-			<Navbar />
-			<Header />
-			<Router>
-				<Switch>
-					{/* <Route exact path="/saved" component={Saved} /> */}
-					<Route component={Results} />
-				</Switch>
-			</Router>
-			<Footer />
+
+				<Router>
+				<Nav />
+				<Header />
+					<Switch>
+						<Route exact path="/search" component={Results} />
+						<Route exact path="/bookshelf" component={Saved} />
+						<Redirect to="/search" />
+					</Switch>
+				<Footer />
+				</Router>
+
 
 		</div>
 	);

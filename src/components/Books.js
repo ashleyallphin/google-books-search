@@ -49,8 +49,12 @@ class Books extends Component {
 
         return(
             <div className="books">
-            <SearchArea searchBooks={this.searchBooks} handleSearch={this.handleSearch} />
-            <Wrapper books={this.state.books} saveBook={this.saveBook} />
+            <SearchArea
+                searchBooks={this.searchBooks}
+                handleSearch={this.handleSearch} />
+            <Wrapper
+                books={this.state.books}
+                saveBook={this.saveBook} />
             </div>
         );
         

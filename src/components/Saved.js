@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import "./Books.css";
-import SearchArea from '../searcharea/SearchArea.js';
+import SearchArea from './SearchArea.js';
 import request from 'superagent';
-import Wrapper from '../wrapper/Wrapper.js';
+import SavedWrapper from './SavedWrapper.js';
 
-class Books extends Component {
+class Saved extends Component {
 
     constructor(props) {
         super(props);
@@ -28,6 +27,11 @@ class Books extends Component {
             this.setState({ books: [...data.body.items]})
         })
     }
+
+    saveBook = (e) => {
+        e.preventDefault();
+        console.log("saving")
+    }
     
 
     // search method (param 'e' = event)
@@ -37,16 +41,20 @@ class Books extends Component {
         this.setState({ searchField: e.target.value })
     }
 
+    saveBook = () => {
+    console.log("saving")
+    }
+
     render() {
 
         return(
             <div className="books">
-            <SearchArea searchBooks={this.searchBooks} handleSearch={this.handleSearch} />
-            <Wrapper books={this.state.books} />
+            {/* <SearchArea searchBooks={this.searchBooks} handleSearch={this.handleSearch} /> */}
+            <SavedWrapper books={this.state.books} saveBook={this.saveBook} />
             </div>
         );
         
     }
 }
 
-export default Books;
+export default Saved;

@@ -30,7 +30,7 @@ return (
                 </div>
             <Button
                 onClick={props.saveBook}
-                className="save-book-button"
+                className="book-button"
                 variant="primary">
                 Save Book
             </Button>

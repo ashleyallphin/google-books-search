@@ -6,15 +6,11 @@ gold: #FCB653
 pink: #FF5254
 ============================ */
 
-
 body {
-  background-color: #fff !important;
+  background-color: #FCB653;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.root {
 }
 
 code {
