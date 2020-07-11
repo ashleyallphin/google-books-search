@@ -41,10 +41,6 @@ class Books extends Component {
         this.setState({ searchField: e.target.value })
     }
 
-    saveBook = () => {
-    console.log("saving")
-    }
-
     render() {
 
         return(

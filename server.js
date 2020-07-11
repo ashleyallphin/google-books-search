@@ -1,7 +1,8 @@
 // =========================
 const color = require('colors-cli/toxic');
-const morgan = require ("morgan");
 const express = require("express");
+const bodyParser = require ('body-parser')
+const morgan = require ("morgan");
 const path = require('path');
 const dotenv = require ('dotenv');
 dotenv.config();
@@ -16,6 +17,7 @@ const mongoose = require("mongoose");
     mongoose.set('useCreateIndex', true);
 
 var db = process.env.MONGODB_URI
+
 mongoose.connect(db)
 .then(() => console.log(`Successfully connected to MongoDB.`.x204 + 
 `\n+++++++++++++++++++++++++++++++++++++++++\n`.x141))
@@ -31,15 +33,10 @@ const bookRoutes = require("./routes/books-routes");
 
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-    });
-
-
-// =========================
 app.use(morgan('dev'));
+app.use(bodyParser.json());
 app.use(bookRoutes);
+app.use(express.static(path.join(__dirname, 'build')));
 
 
 // =========================

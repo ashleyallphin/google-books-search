@@ -19,7 +19,7 @@ return (
     </div>
 
         <div className="card-body">
-                <h4>{props.category}</h4>
+                <h4>{props.category}{props.date}</h4>
                 <a rel="noopener noreferrer"
                 href={props.link} target="_blank">
                 <h1 className="book-title">{props.title}</h1>
@@ -29,7 +29,7 @@ return (
                 <h3>{props.description}</h3>
                 </div>
             <Button
-                onClick={props.saveBook}
+                // onClick={event => props.saveBook(event)}
                 className="book-button"
                 variant="primary">
                 Save Book
@@ -40,8 +40,6 @@ return (
 
     </div>
 
-)
-
-}
+)}
 
 export default BookCard;
