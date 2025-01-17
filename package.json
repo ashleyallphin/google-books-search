@@ -16,7 +16,7 @@
     "colors-cli": "^1.0.27",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.18",
+    "mongoose": "^8.9.5",
     "morgan": "^1.10.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
